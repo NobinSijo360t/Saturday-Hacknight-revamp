@@ -13,24 +13,8 @@ import Timer from '@/components/Timer'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 // import Timer from '@/components/eventComponents/Timer'
-import { getEventById } from '../lib/api';
-export function EventsSection() { ... } {
-  const { id } = params;
-  const event = await getEventById(id);
 
-  // Handle potential undefined or missing id property
-  const eventId = event?.id || 'unknown';
-
-  // Use eventId in your component
-  return (
-    <div>
-      <h1>Event Details</h1>
-      <p>Event ID: {eventId}</p>
-      {/* ... other event details */}
-    </div>
-  );
-}
-export default async function EventPage({ params }) {
+export default function EventsSection() {
 
 
   const events = [1,2,3,4,5,6,7,8];
