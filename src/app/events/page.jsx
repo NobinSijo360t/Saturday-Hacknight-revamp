@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from 'react'
 
@@ -13,11 +13,26 @@ import Timer from '@/components/Timer'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 // import Timer from '@/components/eventComponents/Timer'
+import { getEvents } from '/api';
 
-export default function EventsSection() {
+export function EventsSection() {
 
+  const [events, setEvents] = React.useState([]);
+  const [error, setError] = React.useState(null);
 
-  const events = [1,2,3,4,5,6,7,8];
+  React.useEffect(() => {
+    getEvents()
+      .then(data => setEvents(data))
+      .catch(error => setError(error));
+  }, []);
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  if (events.length === 0) {
+    return <div>No events found</div>;
+  }
 
   return (
     <div className='eventsPage'>
@@ -70,12 +85,11 @@ export default function EventsSection() {
 
 
       {
-        events.map((index)=>{
+        events.map((event, index)=>{
           return(
-            <>
-            <div key = {index}><EventCard /></div>
-            
-            </>
+            <div key={index}>
+              <EventCard event={event} />
+            </div>
           )
         })
       }
