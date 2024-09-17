@@ -8,20 +8,20 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { getEvents } from '../api';
 
-interface Event {
-  id: number;
-  name: string;
+const Event = {
+  id: Number,
+  name: String,
   // Add other event properties here
-}
+};
 
 export function EventsSection() {
-  const [events, setEvents] = React.useState<Event[]>([]);
+  const [events, setEvents] = React.useState([]);
   const [error, setError] = React.useState(null);
 
   React.useEffect(() => {
     getEvents()
-      .then((data: Event[]) => setEvents(data))
-      .catch((error: Error) => setError(error));
+      .then((data) => setEvents(data))
+      .catch((error) => setError(error));
   }, []);
 
   if (error) {
@@ -81,7 +81,7 @@ export function EventsSection() {
 
 
           {
-            events.map((event: Event, index) => {
+            events.map((event, index) => {
               return (
                 <div key={index}>
                   <EventCard event={event} />
@@ -96,6 +96,6 @@ export function EventsSection() {
 
       <Footer/>
 
-    </div>
+    </div> 
   )
 }
