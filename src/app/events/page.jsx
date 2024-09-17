@@ -6,7 +6,7 @@ import EventCard from '@/components/eventComponents/EventCard';
 import Timer from '@/components/Timer';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { getEvents } from '../api';
+import { getEvents } from '/src/app/api/api.js';
 
 const Event = {
   id: Number,
