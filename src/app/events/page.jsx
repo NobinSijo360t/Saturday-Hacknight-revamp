@@ -13,7 +13,7 @@ import Timer from '@/components/Timer'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 // import Timer from '@/components/eventComponents/Timer'
-import { getEvents } from '/api';
+import { getEvents } from 'src/app/api/index.js';
 
 export function EventsSection() {
 
