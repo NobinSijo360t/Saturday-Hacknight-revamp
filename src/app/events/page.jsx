@@ -14,7 +14,7 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 // import Timer from '@/components/eventComponents/Timer'
 import { getEventById } from '../lib/api';
-export default async function EventPage({ params }) {
+export function EventsSection() { ... } {
   const { id } = params;
   const event = await getEventById(id);
 
@@ -30,7 +30,7 @@ export default async function EventPage({ params }) {
     </div>
   );
 }
-export default function EventsSection() {
+export default async function EventPage({ params }) {
 
 
   const events = [1,2,3,4,5,6,7,8];
