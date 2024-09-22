@@ -11,7 +11,10 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.5"
+    "next": "14.2.5",
+    "firebase/auth": "^10.5.1",
+    "firebase/firestore": "^10.5.1",
+    "firebase/app": "^10.5.1"
   },
   "devDependencies": {
     "postcss": "^8",
