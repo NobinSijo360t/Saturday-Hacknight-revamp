@@ -7,7 +7,7 @@ import Timer from '@/components/Timer';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { getEvents } from '/src/app/api/api.js';
-import firebase from 'firebase/app';
+import firebase from '@firebase/app';
 const Event = {
   id: Number,
   name: String,
